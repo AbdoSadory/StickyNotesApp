@@ -1,23 +1,16 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import StickerNote from "./note/StickerNote";
 
 function App() {
+  let notes = [
+    { id: 1, note: "note number 1" },
+    { id: 2, note: "note number 2" },
+    { id: 3, note: "note number 3" },
+    { id: 4, note: "note number 4" },
+  ];
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <StickerNote />
     </div>
   );
 }

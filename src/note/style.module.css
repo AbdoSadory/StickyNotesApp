@@ -1,0 +1,81 @@
+.parent {
+  position: absolute;
+  top: 5px;
+  left: 20px;
+  width: 200px;
+  padding-bottom: 5px;
+
+  background-color: red;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.header {
+  position: relative;
+}
+.pin {
+  position: absolute;
+  top: 4px;
+  left: 43%;
+  z-index: 5;
+}
+
+.btns_container {
+  opacity: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  transition: 0.2s all ease-in-out;
+}
+.header:hover .btns_container {
+  opacity: 1;
+}
+.btn {
+  transition: 0.2s all ease-in-out;
+  vertical-align: middle;
+}
+.btn svg {
+  vertical-align: sub;
+}
+.btn:hover {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+.noteForm {
+  position: absolute;
+  bottom: 100%;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+  transition: 0.2s all ease-in-out;
+}
+.textArea_container {
+  position: relative;
+}
+.textArea {
+  resize: none;
+  width: 100%;
+  display: block;
+  border: unset;
+  outline: unset;
+}
+.submit_note {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  border: unset;
+  outline: unset;
+}
+.submit_note svg {
+  fill: gray;
+  transition: 0.2s all ease-in-out;
+}
+.submit_note svg:hover {
+  fill: black;
+}
+.note_body {
+  border-top: 1px solid black;
+  padding: 10px;
+  width: 100%;
+  height: 250px;
+  text-align: start;
+  word-wrap: break-word;
+  overflow-y: scroll;
+  font-weight: bold;
+}
