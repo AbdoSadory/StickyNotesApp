@@ -97,7 +97,7 @@ const StickerNote = ({ element, newNote, delNote }) => {
       coordinations.current.coorX = `${e.clientX}`;
       coordinations.current.coorY = `${e.clientY}`;
     };
-    const onMouseUp = (e) => {
+    const onMouseUp = () => {
       isDraggable.current = false;
       // console.log("up");
     };
@@ -116,7 +116,7 @@ const StickerNote = ({ element, newNote, delNote }) => {
         noteElement.style.top = `${nextY}px`;
       }
     };
-    const onMouseLeave = (e) => {
+    const onMouseLeave = () => {
       isDraggable.current = false;
       // console.log("leave");
       coordinations.current.coorLastX = noteElement.offsetLeft;
@@ -125,30 +125,27 @@ const StickerNote = ({ element, newNote, delNote }) => {
     pinElement.addEventListener("mousedown", (e) => {
       onMouseDown(e);
     });
-    pinElement.addEventListener("mouseup", (e) => {
-      onMouseUp(e);
+    pinElement.addEventListener("mouseup", () => {
+      onMouseUp();
     });
     noteElement.addEventListener("mousemove", (e) => {
       onMouseMove(e);
     });
-    noteElement.addEventListener("mouseleave", (e) => {
-      onMouseLeave(e);
+    noteElement.addEventListener("mouseleave", () => {
+      onMouseLeave();
     });
     const cleanUp = () => {
       pinElement.removeEventListener("mousedown", (e) => {
         onMouseDown(e);
       });
-      pinElement.removeEventListener("mouseup", (e) => {
-        onMouseUp(e);
-      });
-      pinElement.removeEventListener("mousemove", (e) => {
-        onMouseMove(e);
+      pinElement.removeEventListener("mouseup", () => {
+        onMouseUp();
       });
       noteElement.removeEventListener("mousemove", (e) => {
         onMouseMove(e);
       });
-      noteElement.removeEventListener("mouseleave", (e) => {
-        onMouseLeave(e);
+      noteElement.removeEventListener("mouseleave", () => {
+        onMouseLeave();
       });
     };
     return cleanUp;
