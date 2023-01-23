@@ -1,28 +1,31 @@
 .parent {
   position: absolute;
-  top: 5px;
-  left: 20px;
   width: 200px;
   padding-bottom: 5px;
-
   background-color: red;
   border-radius: 10px;
   overflow: hidden;
+}
+.parent:hover {
+  z-index: 99999;
 }
 .header {
   position: relative;
 }
 .pin {
+  cursor: pointer;
   position: absolute;
-  top: 4px;
+  top: 10px;
   left: 43%;
   z-index: 5;
+  transform: rotate(45deg);
 }
 
 .btns_container {
   opacity: 0;
   background-color: rgba(0, 0, 0, 0.3);
   transition: 0.2s all ease-in-out;
+  height: 50px;
 }
 .header:hover .btns_container {
   opacity: 1;
@@ -31,9 +34,7 @@
   transition: 0.2s all ease-in-out;
   vertical-align: middle;
 }
-.btn svg {
-  vertical-align: sub;
-}
+
 .btn:hover {
   background-color: rgba(0, 0, 0, 0.3);
 }
