@@ -33,7 +33,7 @@ const StickerNote = ({ element, newNote, delNote }) => {
   const clickAndHold = (ele) => {
     let timer;
     const onMouseDown = () => {
-      timer = setInterval(newNote, 100);
+      timer = setInterval(newNote, 400);
     };
     const stopInterval = () => {
       clearInterval(timer);
